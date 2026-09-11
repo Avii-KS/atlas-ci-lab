@@ -1,7 +1,8 @@
 name: CI
 
 on: [push, pull_request]
-
+permission:
+ contents: :read
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -18,9 +19,6 @@ jobs:
 
   deploy-check:
     needs: test
-    permissions:
-      id-token: write
-      contents: rea
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
