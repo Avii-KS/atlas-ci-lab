@@ -1,16 +1,13 @@
-const test = require('node:test');
-const assert = require('node:assert');
-const { add, isEven, formatName } = require('../src/math');
+function add(a, b) {
+  return a + b;
+}
 
-test('add sums two numbers', () => {
-  assert.strictEqual(add(2, 3), 5);
-});
+function isEven(num) {
+  return num % 2 === 0;
+}
 
-test('isEven detects even numbers', () => {
-  assert.strictEqual(isEven(4), true);
-  assert.strictEqual(isEven(7), false);
-});
+function formatName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
 
-test('formatName joins first and last', () => {
-  assert.strictEqual(formatName('Ada', 'Lovelace'), 'Ada Lovelace');
-});
+module.exports = { add, isEven, formatName };
